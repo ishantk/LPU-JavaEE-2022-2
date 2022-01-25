@@ -52,3 +52,6 @@ public class POJO {
 	}
 
 }
+
+// Assignment: Create an Object either Restraunt Object or Product from Amazon
+//			 list all the attributes and then create objects :)
