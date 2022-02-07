@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to eStore</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">eStore</a>
+	    <div class="collapse navbar-collapse" id="navbarNav">
+	      <ul class="navbar-nav">
+	        <li class="nav-item">
+	          <a class="nav-link" href="register.html">Register</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="#">Account</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="tags.jsp">JSP Tags</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+	
+	  <div class="mt-4 p-5 bg-primary text-white rounded">
+	    <h3>Welcome to eStore Web App</h3>
+		<p>Shop from electronics to clothing to toys from us</p> 
+	  </div>
+	  
+	    <br>
+		<h3>Login Here:</h3>
+		<br>
+
+		<form action="Auth" method="post">
+		<!-- <form action="Front" method="post"> -->
+		  <div class="mb-3">
+		    <label for="txtEmail" class="form-label">Email address</label>
+		    <input type="email" class="form-control" id="txtEmail" name="txtEmail" style="width: 320px;">
+		  </div>
+		  <div class="mb-3">
+		    <label for="txtPassword" class="form-label">Password</label>
+		    <input type="password" class="form-control" id="txtPassword" name="txtPassword" style="width: 320px;">
+		  </div>
+		  <input type="hidden" name="txtType" value="login">
+		  <button type="submit" class="btn btn-primary">Login</button>
+	  </form>
+		
+
+	</div>
+
+	
+
+</body>
+</html>
