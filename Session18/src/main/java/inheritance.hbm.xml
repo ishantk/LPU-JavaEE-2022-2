@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+
+   <class name="com.auribises.model.Product" table="ESTORE_PRODUCTS" discriminator-value="product">
+      
+      <!-- id -> primary key
+      generator class increment -> auto increment -->
+      <id name="pid" column="PID">
+         <generator class="increment"/>
+      </id>
+      <discriminator column="PRODUCT_TYPE" type="string"/>
+      
+      <property name="name" column="NAME" />
+      <property name="price" column="PRICE" />
+      
+      
+      <subclass name="com.auribises.model.Phone" discriminator-value="phone">
+      	 <property name="screenSize" column="SCREEN_SIZE" />
+     	 <property name="ram" column="RAM" />
+     	 <property name="memory" column="MEMORY" />
+     	 
+     	 <subclass name="com.auribises.model.SmartPhone" discriminator-value="smart-phone">
+	     	 <property name="os" column="OS" />
+	     	 <property name="features" column="FEATURES" />
+     	 </subclass>
+      
+      </subclass>
+      
+   </class>
+   
+</hibernate-mapping>

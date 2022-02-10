@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+
+   <class name="com.auribises.model.Restaurant" table="RESTAURANT">
+      
+      <!-- id -> primary key
+      generator class increment -> auto increment -->
+      <id name="rid" column="RID">
+         <generator class="increment"/>
+      </id>
+      <property name="name" column="NAME" />
+      <property name="phone" column="PHONE" />
+      <property name="operatingHours" column="OPERATING_HOURS" />
+      <property name="pricePerPerson" column="PRICE_PER_PERSON" />
+      
+      <!-- One to May Relationship Mapping with Dish -->
+      <list name="dishes" cascade="all">	
+       	<!-- Key Column RID will be created in the DISH Table below -->
+      	<key column="RID"/>
+      	
+      	 <!-- idx column will be created in the DISH Table below -->
+      	<list-index column="idx"/>
+      	<one-to-many class="com.auribises.model.Dish"/>
+      </list>
+      
+   </class>
+   
+   <class name="com.auribises.model.Dish" table="DISH">
+      
+      <!-- id -> primary key
+      generator class increment -> auto increment -->
+      <id name="dishId" column="DISHID">
+         <generator class="increment"/>
+      </id>
+      <property name="name" column="NAME" />
+      <property name="price" column="PRICE" />
+      
+   </class>
+   
+</hibernate-mapping>
